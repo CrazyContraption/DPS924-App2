@@ -22,13 +22,11 @@ public class ManagerView extends AppCompatActivity {
 
                 case "button_history":
                     Intent intent1 = new Intent(this, HistoryView.class);
-                    //intent.putExtra(EXTRA_MESSAGE, message);
                     startActivity(intent1);
                     break;
 
                 case "button_restock":
                     Intent intent2 = new Intent(this, RestockView.class);
-                    //intent.putExtra(EXTRA_MESSAGE, message);
                     startActivity(intent2);
                     break;
 

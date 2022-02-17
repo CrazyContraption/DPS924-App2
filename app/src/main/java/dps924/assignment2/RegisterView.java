@@ -3,7 +3,6 @@ package dps924.assignment2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,8 +21,6 @@ public class RegisterView extends AppCompatActivity {
 
     public static PurchasableViewListAdapter<Purchasable> adapter_Inventory;
 
-    public static Toast MyToast;
-
     private static boolean isAlive = false;
 
     public static int ProductType = -1;
@@ -36,7 +33,6 @@ public class RegisterView extends AppCompatActivity {
 
                     case "button_manager":
                         Intent intent = new Intent(this, ManagerView.class);
-                        //intent.putExtra(EXTRA_MESSAGE, message);
                         startActivity(intent);
                         break;
 
@@ -45,10 +41,9 @@ public class RegisterView extends AppCompatActivity {
                         break;
 
                 }
-            } else { // Product Selection
+            } else { // Product Selection(s)
                 ProductType = Math.abs(view.getId()) -2;
 
-                //view.setSelected(true);
                 ToastController.showToast(this, "Selected " + Inventory.get(ProductType).Name);
 
                 if (((View)view.getParent()).getId() == R.id.restock_products) {
